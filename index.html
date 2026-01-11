@@ -3,94 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibaan Studios | Future Tech Agency</title>
+    <title>Vibaan Studios | Elite Tech Agency</title>
     <style>
-        /* HACKER THEME SETUP */
         :root {
-            --bg-color: #0a0a0a;
+            --bg-color: #000000;
             --text-color: #e0e0e0;
-            --accent-color: #00ff88; /* Cyber Green */
-            --secondary-color: #7000ff; /* Neon Purple */
+            --accent-color: #00ff41; /* Matrix Green */
+            --glass-bg: rgba(0, 20, 0, 0.7);
         }
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Courier New', monospace; /* Hacker Font */
+            font-family: 'Courier New', monospace;
             background-color: var(--bg-color);
             color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
+            overflow-x: hidden;
         }
         
-        /* GLOWING TEXT EFFECT */
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px var(--accent-color);
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-top: 0;
-        }
-        p {
-            max-width: 600px;
-            line-height: 1.6;
-            font-family: sans-serif;
+        /* MATRIX BACKGROUND */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
             opacity: 0.8;
-            padding: 0 20px;
         }
 
-        /* BUTTON DESIGN */
+        /* CONTAINER */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 0 0 10px var(--accent-color);
+            letter-spacing: 2px;
+        }
+        .typewriter {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-top: 10px;
+            min-height: 1.5em;
+        }
+
+        /* PORTFOLIO SECTION */
+        .section-title {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding-bottom: 50px;
+        }
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        .card h3 { color: var(--accent-color); margin-top: 0; }
+        
+        /* CONTACT BUTTONS */
         .btn {
-            margin-top: 30px;
-            padding: 15px 30px;
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
             background: transparent;
             border: 2px solid var(--accent-color);
             color: var(--accent-color);
-            font-size: 1.2rem;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1rem;
             transition: 0.3s;
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
         }
         .btn:hover {
             background: var(--accent-color);
             color: black;
-            box-shadow: 0 0 30px var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
         }
 
         /* FOOTER */
-        .footer {
+        footer {
             margin-top: 50px;
+            padding: 20px;
             font-size: 0.8rem;
-            opacity: 0.5;
+            opacity: 0.6;
+            border-top: 1px solid #333;
         }
     </style>
 </head>
 <body>
 
-    <h1>VIBAAN STUDIOS</h1>
-    <h2>>> Architecting the Future_</h2>
-    
-    <p>
-        Welcome to the digital headquarters of Vibaan Maurya. 
-        We don't just build websites; we engineer digital experiences.
-        <br><br>
-        <strong>Web Development | Cybersecurity | AI Solutions</strong>
-    </p>
+    <canvas id="matrix"></canvas>
 
-    <a href="mailto:vibaan.work@gmail.com" class="btn">START PROJECT</a>
+    <div class="container">
+        <div class="hero">
+            <h1>VIBAAN STUDIOS</h1>
+            <div class="typewriter" id="typing-text"></div>
+            <br>
+            <a href="#projects" class="btn">ACCESS SYSTEM</a>
+        </div>
 
-    <div class="footer">
-        System Status: ONLINE 🟢 <br>
-        © 2026 Vibaan Studios. All rights reserved.
+        <h2 id="projects" class="section-title">DEPLOYED PROJECTS</h2>
+        <div class="projects-grid">
+            <div class="card">
+                <h3>PROJECT LYRA</h3>
+                <p>Advanced AI Assistant with voice recognition and security protocols.</p>
+                <small>[STATUS: CLASSIFIED]</small>
+            </div>
+            <div class="card">
+                <h3>CYBER SECURITY</h3>
+                <p>Penetration testing and network defense systems for private clients.</p>
+                <small>[STATUS: ACTIVE]</small>
+            </div>
+            <div class="card">
+                <h3>BAD-USB TOOLS</h3>
+                <p>Hardware hacking research and custom payload development.</p>
+                <small>[STATUS: RESEARCH]</small>
+            </div>
+        </div>
+
+        <h2 class="section-title">ESTABLISH UPLINK</h2>
+        <p>Need secure digital infrastructure? Contact HQ.</p>
+        <br>
+        <a href="mailto:vibaan.work@gmail.com" class="btn">EMAIL ENCRYPTED</a>
+        <a href="#" class="btn">WHATSAPP SECURE</a>
+
+        <footer>
+            SYSTEM ID: VIB-2026-X <br>
+            © 2026 Vibaan Studios. All systems nominal.
+        </footer>
     </div>
 
+    <script>
+        // MATRIX RAIN EFFECT
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0F0"; // Green text
+            ctx.font = fontSize + "px arial";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
+
+        // TYPING EFFECT
+        const textElement = document.getElementById("typing-text");
+        const texts = ["Architecting the Future...", "AI Development...", "Ethical Hacking Solutions..."];
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+
+        (function type() {
+            if (count === texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+            
+            textElement.textContent = letter;
+            if (letter.length === currentText.length) {
+                count++;
+                index = 0;
+                setTimeout(type, 2000); // Wait before next phrase
+            } else {
+                setTimeout(type, 100);
+            }
+        }());
+
+        // RESIZE FIX
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
