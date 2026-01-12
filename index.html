@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Consolas', 'Courier New', monospace; /* Hacker Font */
+            font-family: 'Courier New', monospace; /* Phone Friendly Font */
         }
 
         body {
@@ -22,73 +22,61 @@
         /* --- NAVIGATION BAR --- */
         nav {
             display: flex;
-            justify_content: space-between;
+            justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background: rgba(0, 255, 0, 0.05); /* Slight Green Tint */
+            padding: 15px 20px;
+            background: rgba(0, 255, 0, 0.05);
             border-bottom: 1px solid #00ff00;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             color: #00ff00; /* Neon Green */
-            letter-spacing: 2px;
             text-shadow: 0 0 10px #00ff00;
         }
 
         .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #00ff00;
-            text-shadow: 0 0 10px #00ff00;
+            display: none; /* Phone me menu chupayenge to keep clean */
         }
 
         /* --- HERO SECTION (Main Area) --- */
         .hero {
-            height: 90vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
+            padding: 20px;
         }
 
-        /* --- 📸 THE FOUNDER PHOTO (Magic Happens Here) --- */
+        /* --- 📸 THE FOUNDER PHOTO --- */
         .founder-pic {
-            width: 220px;
-            height: 220px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%; /* Circle Shape */
             object-fit: cover;
-            border: 4px solid #00ff00; /* Green Border */
+            border: 3px solid #00ff00; /* Green Border */
             
             /* The Glowing Effect */
-            box-shadow: 0 0 30px rgba(0, 255, 0, 0.6), 
-                        0 0 60px rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.6), 
+                        0 0 40px rgba(0, 255, 0, 0.3);
             
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             transition: all 0.5s ease;
-            cursor: pointer;
         }
 
-        /* Mouse le jaane par photo zoom aur blue glow karegi */
+        /* Animation on Touch/Hover */
         .founder-pic:hover {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.05);
             border-color: #00ffff; /* Cyan Color */
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 
-                        0 0 80px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
         }
 
         /* --- TEXT STYLING --- */
         h1 {
-            font-size: 4rem;
+            font-size: 2rem; /* Mobile size adjusted */
             margin-bottom: 10px;
             text-transform: uppercase;
         }
@@ -98,58 +86,28 @@
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #cccccc;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
+            margin-bottom: 30px;
         }
 
         /* --- BUTTONS --- */
         .btn {
-            padding: 15px 40px;
+            padding: 12px 30px;
             background: transparent;
             color: #00ff00;
             border: 2px solid #00ff00;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            cursor: pointer;
-            transition: 0.4s;
             text-decoration: none;
             text-transform: uppercase;
+            display: inline-block;
         }
 
         .btn:hover {
             background: #00ff00;
             color: #000;
-            box-shadow: 0 0 20px #00ff00;
-        }
-
-        /* --- SERVICES SECTION --- */
-        .services {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 50px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: #111;
-            padding: 30px;
-            border: 1px solid #333;
-            width: 300px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: #00ff00;
-            transform: translateY(-10px);
-        }
-
-        .card h3 {
-            color: #00ff00;
-            margin-bottom: 15px;
+            box-shadow: 0 0 15px #00ff00;
         }
 
         /* --- FOOTER --- */
@@ -158,7 +116,8 @@
             padding: 20px;
             border-top: 1px solid #333;
             color: #666;
-            margin-top: 50px;
+            font-size: 0.8rem;
+            margin-top: 30px;
         }
 
     </style>
@@ -167,12 +126,6 @@
 
     <nav>
         <div class="logo">Vibaan Studios_</div>
-        <div class="nav-links">
-            <a href="#">HOME</a>
-            <a href="#">PROJECTS</a>
-            <a href="#">LYRA AI</a>
-            <a href="#">CONTACT</a>
-        </div>
     </nav>
 
     <section class="hero">
@@ -180,28 +133,13 @@
         <img src="vibaan.png" alt="Vibaan Sir Founder" class="founder-pic">
         
         <h1>Welcome to <span class="highlight">Vibaan Studios</span></h1>
-        <p>WEB DEVELOPMENT | ETHICAL HACKING | AI SOLUTIONS</p>
+        <p>CODE. HACK. INNOVATE.</p>
         
-        <a href="#" class="btn">Initialize Project</a>
-    </section>
-
-    <section class="services">
-        <div class="card">
-            <h3>WEB DEV</h3>
-            <p>High-performance, secure websites designed for the future.</p>
-        </div>
-        <div class="card">
-            <h3>AI LYRA</h3>
-            <p>Next-Gen Artificial Intelligence powered by Python & Logic.</p>
-        </div>
-        <div class="card">
-            <h3>SECURITY</h3>
-            <p>Advanced penetration testing and cybersecurity audits.</p>
-        </div>
+        <a href="#" class="btn">Initialize</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Vibaan Studios. System Secure.</p>
+        <p>&copy; 2026 Vibaan Studios.<br>System Secure.</p>
     </footer>
 
 </body>
