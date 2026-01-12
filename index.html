@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Vibaan Studios - Professional Agency for 2D/3D Website Development and Custom AI Assistants.">
-    <meta name="keywords" content="Vibaan Studios, Web Developer, AI Assistant, Lyra AI, Python Developer">
-    <title>Vibaan Studios | AI & 3D Web Agency</title>
+    <meta name="description" content="Vibaan Studios - Professional Agency for 2D/3D Website Development, AI Assistants, and CS Student Projects.">
+    <title>Vibaan Studios | Tech & Projects</title>
     
     <style>
         :root {
@@ -45,33 +44,33 @@
 
         /* HERO SECTION */
         .hero {
-            min-height: 90vh; /* Thoda height badhaya taaki photo fit ho */
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
         
-        /* 📸 PHOTO STYLING (NEW ADDITION) */
+        /* 📸 PHOTO STYLING */
         .profile-pic {
             width: 180px;
             height: 180px;
-            border-radius: 50%; /* Gol (Circle) */
+            border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--accent-color);
-            box-shadow: 0 0 25px rgba(0, 255, 65, 0.6); /* Neon Glow */
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.6);
             margin-bottom: 25px;
             transition: transform 0.3s ease;
         }
 
         .profile-pic:hover {
-            transform: scale(1.05); /* Zoom on hover */
+            transform: scale(1.05);
             box-shadow: 0 0 50px var(--accent-color);
             cursor: pointer;
         }
 
         h1 {
-            font-size: 3rem; /* Mobile ke liye adjust kiya */
+            font-size: 2.8rem;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -80,7 +79,7 @@
         
         /* TYPING TEXT */
         .typewriter {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--accent-color);
             margin-top: 15px;
             min-height: 1.5em;
@@ -121,12 +120,13 @@
         .service-card h3 {
             color: var(--accent-color);
             margin-top: 0;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             text-transform: uppercase;
         }
         .service-card p {
             opacity: 0.9;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* SKILLS SECTION */
@@ -213,21 +213,21 @@
         <h2 class="section-title">TECHNICAL STATS</h2>
         <div class="skills-container">
             <div class="skill-box">
-                <span class="skill-title">PYTHON / AI DEV [95%]</span>
+                <span class="skill-title">PYTHON / AI DEV [98%]</span>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar" style="width: 98%"></div>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="skill-title">WEB ARCHITECTURE [95%]</span>
                 <div class="progress-bar-bg">
                     <div class="progress-bar" style="width: 95%"></div>
                 </div>
             </div>
             <div class="skill-box">
-                <span class="skill-title">WEB ARCHITECTURE [90%]</span>
+                <span class="skill-title">PROJECT MANAGEMENT [100%]</span>
                 <div class="progress-bar-bg">
-                    <div class="progress-bar" style="width: 90%"></div>
-                </div>
-            </div>
-            <div class="skill-box">
-                <span class="skill-title">3D MODELING [85%]</span>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar" style="width: 85%"></div>
+                    <div class="progress-bar" style="width: 100%"></div>
                 </div>
             </div>
         </div>
@@ -236,24 +236,29 @@
         <div class="services-grid">
             
             <div class="service-card">
-                <h3>2D WEBSITES</h3>
-                <p>Fast, clean, and responsive professional websites for business or personal use.</p>
+                <h3>CS STUDENT PROJECTS</h3>
+                <p>Complete Final Year Projects (AI, Python, Web) with source code & documentation for CS/IT students.</p>
             </div>
 
             <div class="service-card">
-                <h3>3D WEBSITES</h3>
-                <p>High-tech immersive websites with 3D models, animations, and interactive visuals.</p>
+                <h3>2D & 3D WEBSITES</h3>
+                <p>High-tech, responsive websites with 3D models and animations for businesses and portfolios.</p>
             </div>
 
             <div class="service-card">
-                <h3>AI ASSISTANT FOR LAPTOP</h3>
-                <p>Custom-built Personal AI Assistants (like Lyra) for desktop automation and voice control.</p>
+                <h3>AI ASSISTANTS (LYRA)</h3>
+                <p>Custom-built Personal AI Assistants for laptop automation, security, and voice control.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>ETHICAL HACKING TOOLS</h3>
+                <p>Development of custom security tools, penetration testing scripts, and network analysis.</p>
             </div>
 
         </div>
 
         <h2 class="section-title">ESTABLISH CONNECTION</h2>
-        <p>Ready to upgrade? Send a signal.</p>
+        <p>Need a Project? Send a signal.</p>
         
         <div class="btn-container">
             <a href="https://wa.me/917322056257" class="btn">WHATSAPP NOW</a>
@@ -274,7 +279,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const letters = "10101010VIBAANSTUDIOS";
+        const letters = "10101010PROJECTS";
         const fontSize = 14;
         const columns = canvas.width / fontSize;
         const drops = [];
@@ -304,9 +309,9 @@
         // TYPING EFFECT
         const textElement = document.getElementById("typing-text");
         const texts = [
-            "Building 2D Websites...", 
-            "Designing 3D Experiences...", 
-            "Creating AI Assistants...",
+            "CS Final Year Projects...", 
+            "2D & 3D Web Development...", 
+            "Custom AI Assistants...",
             "Vibaan Studios Online..."
         ];
         let count = 0;
@@ -331,7 +336,7 @@
             }
         }());
 
-        // ANIMATE SKILL BARS ON LOAD
+        // ANIMATE SKILL BARS
         window.onload = function() {
             const bars = document.querySelectorAll('.progress-bar');
             bars.forEach(bar => {
@@ -342,11 +347,6 @@
                 }, 500);
             });
         };
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
     </script>
 </body>
 </html>
