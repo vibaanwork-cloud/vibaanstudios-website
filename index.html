@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Vibaan Studios - Professional Agency for 2D/3D Website Development and Custom AI Assistants. Building the future of tech.">
-    <meta name="keywords" content="Vibaan Studios, Web Developer, 3D Website, AI Assistant, Lyra AI, Website Banaye, Python Developer, Tech Agency India">
-    <meta name="author" content="Vibaan Studios">
-    <meta name="robots" content="index, follow">
-
+    <meta name="description" content="Vibaan Studios - Professional Agency for 2D/3D Website Development and Custom AI Assistants.">
+    <meta name="keywords" content="Vibaan Studios, Web Developer, AI Assistant, Lyra AI, Python Developer">
     <title>Vibaan Studios | AI & 3D Web Agency</title>
     
     <style>
@@ -48,15 +45,33 @@
 
         /* HERO SECTION */
         .hero {
-            height: 80vh;
+            min-height: 90vh; /* Thoda height badhaya taaki photo fit ho */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
         
+        /* 📸 PHOTO STYLING (NEW ADDITION) */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* Gol (Circle) */
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.6); /* Neon Glow */
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05); /* Zoom on hover */
+            box-shadow: 0 0 50px var(--accent-color);
+            cursor: pointer;
+        }
+
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem; /* Mobile ke liye adjust kiya */
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -114,7 +129,7 @@
             line-height: 1.6;
         }
 
-        /* SKILLS SECTION (CLEAN - NO HACKING) */
+        /* SKILLS SECTION */
         .skills-container {
             text-align: left;
             background: var(--glass-bg);
@@ -187,6 +202,8 @@
 
     <div class="container">
         <div class="hero">
+            <img src="vibaan_png.png" alt="Vibaan Founder" class="profile-pic">
+            
             <h1>VIBAAN STUDIOS</h1>
             <div class="typewriter" id="typing-text"></div>
             <br>
