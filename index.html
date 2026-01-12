@@ -3,333 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Vibaan Studios - Professional Agency for 2D/3D Website Development and Custom AI Assistants. Building the future of tech.">
-    <meta name="keywords" content="Vibaan Studios, Web Developer, 3D Website, AI Assistant, Lyra AI, Website Banaye, Python Developer, Tech Agency India">
-    <meta name="author" content="Vibaan Studios">
-    <meta name="robots" content="index, follow">
-
-    <title>Vibaan Studios | AI & 3D Web Agency</title>
-    
+    <title>Vibaan Studios | Future of Tech</title>
     <style>
-        :root {
-            --bg-color: #000000;
-            --text-color: #e0e0e0;
-            --accent-color: #00ff41; /* Matrix Green */
-            --glass-bg: rgba(0, 20, 0, 0.85);
-        }
-        body {
+        /* --- GLOBAL STYLES (Hacker Theme) --- */
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Courier New', monospace;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace; /* Phone Friendly Font */
+        }
+
+        body {
+            background-color: #050505; /* Deep Black */
+            color: #ffffff;
             overflow-x: hidden;
         }
-        
-        /* MATRIX BACKGROUND */
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.8;
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 255, 0, 0.05);
+            border-bottom: 1px solid #00ff00;
         }
 
-        /* CONTAINER */
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00ff00; /* Neon Green */
+            text-shadow: 0 0 10px #00ff00;
         }
 
-        /* HERO SECTION */
+        .nav-links a {
+            display: none; /* Phone me menu chupayenge to keep clean */
+        }
+
+        /* --- HERO SECTION (Main Area) --- */
         .hero {
-            height: 80vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            padding: 20px;
         }
-        
+
+        /* --- 📸 THE FOUNDER PHOTO --- */
+        .founder-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* Circle Shape */
+            object-fit: cover;
+            border: 3px solid #00ff00; /* Green Border */
+            
+            /* The Glowing Effect */
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.6), 
+                        0 0 40px rgba(0, 255, 0, 0.3);
+            
+            margin-bottom: 25px;
+            transition: all 0.5s ease;
+        }
+
+        /* Animation on Touch/Hover */
+        .founder-pic:hover {
+            transform: scale(1.05);
+            border-color: #00ffff; /* Cyan Color */
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+        }
+
+        /* --- TEXT STYLING --- */
         h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 0 0 10px var(--accent-color);
-        }
-        
-        /* TYPING TEXT */
-        .typewriter {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            margin-top: 15px;
-            min-height: 1.5em;
-            font-weight: bold;
-        }
-
-        /* SECTIONS GENERAL */
-        .section-title {
-            font-size: 2rem;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
-            margin-top: 60px;
-            margin-bottom: 40px;
-            padding-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        
-        /* SERVICES GRID */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            text-align: left;
-        }
-        .service-card {
-            background: var(--glass-bg);
-            border: 1px solid #333;
-            border-left: 3px solid var(--accent-color);
-            padding: 25px;
-            transition: 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 255, 65, 0.3);
-            border-color: var(--accent-color);
-        }
-        .service-card h3 {
-            color: var(--accent-color);
-            margin-top: 0;
-            font-size: 1.4rem;
+            font-size: 2rem; /* Mobile size adjusted */
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
-        .service-card p {
-            opacity: 0.9;
-            line-height: 1.6;
+
+        .highlight {
+            color: #00ff00;
         }
 
-        /* SKILLS SECTION (CLEAN - NO HACKING) */
-        .skills-container {
-            text-align: left;
-            background: var(--glass-bg);
-            padding: 30px;
-            border: 1px solid var(--accent-color);
-            margin-top: 20px;
-        }
-        .skill-box {
-            margin-bottom: 20px;
-        }
-        .skill-title {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-        .progress-bar-bg {
-            background: #333;
-            height: 10px;
-            width: 100%;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .progress-bar {
-            height: 100%;
-            background: var(--accent-color);
-            width: 0%;
-            box-shadow: 0 0 10px var(--accent-color);
-            transition: width 2s ease-in-out;
+        p {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-bottom: 30px;
         }
 
-        /* CONTACT BUTTONS */
-        .btn-container {
-            margin-top: 50px;
-            margin-bottom: 80px;
-        }
+        /* --- BUTTONS --- */
         .btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 30px;
-            background: rgba(0, 255, 65, 0.1);
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-            text-decoration: none;
+            padding: 12px 30px;
+            background: transparent;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
-            cursor: pointer;
+            text-decoration: none;
             text-transform: uppercase;
-        }
-        .btn:hover {
-            background: var(--accent-color);
-            color: black;
-            box-shadow: 0 0 20px var(--accent-color);
+            display: inline-block;
         }
 
-        /* FOOTER */
-        footer {
-            margin-top: 50px;
-            padding: 30px;
-            font-size: 0.8rem;
-            opacity: 0.5;
-            border-top: 1px solid #333;
+        .btn:hover {
+            background: #00ff00;
+            color: #000;
+            box-shadow: 0 0 15px #00ff00;
         }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 30px;
+        }
+
     </style>
 </head>
 <body>
 
-    <canvas id="matrix"></canvas>
+    <nav>
+        <div class="logo">Vibaan Studios_</div>
+    </nav>
 
-    <div class="container">
-        <div class="hero">
-            <h1>VIBAAN STUDIOS</h1>
-            <div class="typewriter" id="typing-text"></div>
-            <br>
-            <a href="#services" class="btn">INITIALIZE SYSTEM</a>
-        </div>
-
-        <h2 class="section-title">TECHNICAL STATS</h2>
-        <div class="skills-container">
-            <div class="skill-box">
-                <span class="skill-title">PYTHON / AI DEV [95%]</span>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar" style="width: 95%"></div>
-                </div>
-            </div>
-            <div class="skill-box">
-                <span class="skill-title">WEB ARCHITECTURE [90%]</span>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar" style="width: 90%"></div>
-                </div>
-            </div>
-            <div class="skill-box">
-                <span class="skill-title">3D MODELING [85%]</span>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar" style="width: 85%"></div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="services" class="section-title">DEPLOYABLE SERVICES</h2>
-        <div class="services-grid">
-            
-            <div class="service-card">
-                <h3>2D WEBSITES</h3>
-                <p>Fast, clean, and responsive professional websites for business or personal use.</p>
-            </div>
-
-            <div class="service-card">
-                <h3>3D WEBSITES</h3>
-                <p>High-tech immersive websites with 3D models, animations, and interactive visuals.</p>
-            </div>
-
-            <div class="service-card">
-                <h3>AI ASSISTANT FOR LAPTOP</h3>
-                <p>Custom-built Personal AI Assistants (like Lyra) for desktop automation and voice control.</p>
-            </div>
-
-        </div>
-
-        <h2 class="section-title">ESTABLISH CONNECTION</h2>
-        <p>Ready to upgrade? Send a signal.</p>
+    <section class="hero">
         
-        <div class="btn-container">
-            <a href="https://wa.me/918092940145" class="btn">WHATSAPP NOW</a>
-            <a href="mailto:vibaan.work@gmail.com" class="btn">EMAIL</a>
-        </div>
+        <img src="vibaan.png" alt="Vibaan Sir Founder" class="founder-pic">
+        
+        <h1>Welcome to <span class="highlight">Vibaan Studios</span></h1>
+        <p>CODE. HACK. INNOVATE.</p>
+        
+        <a href="#" class="btn">Initialize</a>
+    </section>
 
-        <footer>
-            SYSTEM ID: VIB-2026-HQ <br>
-            © 2026 Vibaan Studios.
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; 2026 Vibaan Studios.<br>System Secure.</p>
+    </footer>
 
-    <script>
-        // MATRIX RAIN EFFECT
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const letters = "10101010VIBAANSTUDIOS";
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const drops = [];
-
-        for (let x = 0; x < columns; x++) {
-            drops[x] = 1;
-        }
-
-        function draw() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#0F0"; 
-            ctx.font = fontSize + "px arial";
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = letters.charAt(Math.floor(Math.random() * letters.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-        setInterval(draw, 33);
-
-        // TYPING EFFECT
-        const textElement = document.getElementById("typing-text");
-        const texts = [
-            "Building 2D Websites...", 
-            "Designing 3D Experiences...", 
-            "Creating AI Assistants...",
-            "Vibaan Studios Online..."
-        ];
-        let count = 0;
-        let index = 0;
-        let currentText = "";
-        let letter = "";
-
-        (function type() {
-            if (count === texts.length) {
-                count = 0;
-            }
-            currentText = texts[count];
-            letter = currentText.slice(0, ++index);
-            
-            textElement.textContent = letter;
-            if (letter.length === currentText.length) {
-                count++;
-                index = 0;
-                setTimeout(type, 2000); 
-            } else {
-                setTimeout(type, 80);
-            }
-        }());
-
-        // ANIMATE SKILL BARS ON LOAD
-        window.onload = function() {
-            const bars = document.querySelectorAll('.progress-bar');
-            bars.forEach(bar => {
-                let width = bar.style.width;
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 500);
-            });
-        };
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
